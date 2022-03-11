@@ -1,0 +1,41 @@
+spring:
+  profiles:
+    active: local
+  batch:
+    job:
+      names: ${job.name:NONE}
+
+# profile 이 local 일 때, 설정
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/house_batch
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: house
+    password: house
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+  batch:
+    jdbc:
+      initialize-schema: ALWAYS
+
+# 외부 API 에 관한 정보
+external:
+  apartment-api:
+    path: http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade
+    service-key: xQBJVOa59r7H8ZZnkwgNKaLwgnklOXK%2Fj7cAv0P6EdmGk42GnXegPzi%2BPxJYWqVMOVI8dCRCmY6ticGAnThGIw%3D%3D
+
+# profile 이 test 일 때, 설정정
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  jpa:
+    database: h2
