@@ -3,7 +3,7 @@
 ---
 ### 배치 흐름
 ![uml 다이어그램](https://user-images.githubusercontent.com/64354998/171605625-2a0cc778-c336-49e0-b575-3c84aefec762.PNG)
-##### 데이터 출처) 국토 교통부 아파트 실거래가 Open API
+##### 데이터 출처) https://www.data.go.kr/data/15058747/openapi.do 국토 교통부 아파트매매 실거래자료
 
 ---
 ### 테이블 설계
